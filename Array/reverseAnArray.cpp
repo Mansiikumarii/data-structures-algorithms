@@ -1,21 +1,28 @@
-#include <iostream>
-#include<vector>
+#include<iostream>
 using namespace std;
- vector<int> reverse(vector<int>arr){
-    int s=0, e= arr.size()-1;
-    while(s<=e){
-        swap(arr[s],arr[e]);
-        s++;
-        e--;
+
+void reverse(int arr[], int n){
+    int start =0;
+    int end = n-1;
+
+    while(start<= end){
+        swap(arr[start], arr[end]);
+        start++;
+        end--;
     }
-    return arr;
- }
-int main(){
-    vector <int> arr= {5,4,3,2,1};
-    vector<int> Solution = reverse(arr);
-    for(int num: Solution){
-        cout<<num<<" ";
+}
+void printArray(int arr[], int n){
+    for (int i = 0; i < n; i++)
+    {
+        cout<<arr[i]<<" ";
     }
     cout<<endl;
-        return 0;
+    
+}
+
+
+int main(){
+    int arr[6] = {1,2,3,4,5,6};
+    reverse(arr,6);
+    printArray(arr,6);
 }

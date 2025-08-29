@@ -1,40 +1,62 @@
 #include<iostream>
 using namespace std;
-bool isPalindrome(char x[], int n){
-    int start =0, end = n-1;
-    while(start < end){
-        if(x[start] != x[end]){
+char tolowerCase(char ch){
+    if(ch >= 'a' && ch<='z'){
+        return ch;
+    }
+    else{
+        char temp = ch - 'A' + 'a';
+        return temp;
+    }
+}
+bool checkPalindrome(char a[], int n){
+    int s=0;
+    int e= n-1;
+
+    while (s <= e)
+    {
+        if(a[s] != a[e]){
             return 0;
         }
         else{
-            start++;
-            end--;
+            s++;
+            e--;
         }
     }
     return 1;
 }
-void reverseString(char s[], int n ){
-    int start =0, end = n-1;
-    while(start<end){
-        swap(s[start++],s[end--]);
+void reverse(char arr[], int n){
+    int s=0, e = n-1;
+    while(s<e){
+        swap(arr[s++],arr[e--]);
     }
 }
-int getLength(char s[]){
-    int count =0;
-    for(int i=0; s[i] != '\0'; i++){
+int getLength(char arr[]){
+    int count=0;
+    for(int i=0; arr[i] != '\0'; i++ ){
         count++;
     }
     return count;
 }
 int main(){
-    char name[5];
-    cout<<"Enter your name: ";
+    char name[20];
+
+    cout<<"Enter your name "<<endl;
     cin>>name;
-    cout<<"Your name is: "<<name<<endl;
-    cout<<"Length of your name is :"<<getLength(name)<<endl;
-    cout<<"Reversed name is: ";
-    reverseString(name,getLength(name));
-    cout<<name << endl;
-    cout<<"Is your name a palindrome ?"<< (isPalindrome(name,getLength(name)))<<endl;
+
+    cout<<"Your name is ";
+    cout<<name<<endl;
+
+    int len = getLength(name);
+    cout<<"Length "<<len<<endl;
+
+     reverse(name, len);
+     cout<<"Your name is ";
+     cout<<name<<endl;
+
+     cout<<"Palindrome or Not "<<checkPalindrome(name, len)<<endl;
+
+     cout<<"CHARACTER is "<<tolowerCase('B')<<endl;
+
     return 0;
 }
