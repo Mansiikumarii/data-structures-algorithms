@@ -1,31 +1,36 @@
 #include<iostream>
 using namespace std;
-
 void printArray(int arr[], int size){
-     cout<<"Printing the array"<<endl;
-
+    cout<<"Printing the array "<<endl;
+    //printing the array
     for(int i=0; i<size; i++){
-        cout<<arr[i]<<endl;
+        cout<<arr[i]<<" ";
     }
+    cout<<endl;
 }
 int main(){
-    int number[15]={0};
-    //accessing an array
-    cout<< " Value at 0 index "<<number[1]<<endl;
-    cout<<"Everything is Fine"<<endl;
-    //initializing an array
-    int second[3] = {5,7,11};
-    cout<<" Value at 2 index "<<second[2]<<endl;
-    int n=15;
-    cout<<"Printing the array"<<endl;
+  int number[15];
+  //accessing an array
+  cout<<"Value at 15 index "<<number[14]<<endl;
 
-    //initializing all locations with 0
-    printArray(number,15);
+  //initializing an array
+  int second[3]={5,7,11};
 
-    int numsize = sizeof(number)/sizeof(int);
-    cout<<"Size of number is "<<numsize<<endl;
+  //accessing an element
+  cout<<"Value at index 2 is "<<second[2]<<endl;
 
-    char ch[5] = {'m','a','n','s','i'};
-    cout<< ch[3]<<endl;
-    return 0;
+  int third[15] = {2,7};
+  printArray(third,15);
+
+  int fourth[10]={0};
+ printArray(fourth,10);
+
+ char ch[5] = { 'a','b','c','d','e'};
+ cout<<"Character at index 3 is "<<ch[3]<<endl;
+ for(int i=0; i<5; i++){
+    cout<<ch[i]<<" ";
+ }
+ cout<<"printing DONE"<<endl;
+  cout<<"Everthing is fine "<<endl;
+  return 0;  
 }
